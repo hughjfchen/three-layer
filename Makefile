@@ -6,3 +6,6 @@ postgres:
 
 sql-repl:
 	psql -h localhost -p 5432 -U root -d three-layer
+
+proto:
+	protoc --plugin=protoc-gen-haskell=`which proto-lens-protoc` --haskell_out=src --proto_path=proto proto/common.proto proto/login.proto

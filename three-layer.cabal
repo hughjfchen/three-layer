@@ -10,21 +10,21 @@ maintainer:          Holmusk <tech@holmusk.com>
 copyright:           2018-2019 Holmusk
 license:             BSD-3-Clause
 license-file:        LICENSE
-build-type:          Custom
+build-type:          Simple
 extra-doc-files:     README.md
                      ChangeLog.md
-extra-source-files:  proto/common.proto
-                     proto/login.proto
+-- extra-source-files:  proto/common.proto
+--                     proto/login.proto
 tested-with:         GHC == 8.6.5
 
 source-repository head
   type:                git
   location:            https://github.com/holmusk/three-layer.git
 
-custom-setup
-  setup-depends: Cabal
-               , base
-               , proto-lens-setup ^>= 0.4.0.2
+-- custom-setup
+--   setup-depends: Cabal
+--                , base
+--                , proto-lens-setup == 0.4.0.2
 
 common common-options
   build-depends:       base-noprelude ^>= 4.12.0.0
@@ -104,12 +104,12 @@ library
                        Proto.Common_Fields
                        Proto.Login
                        Proto.Login_Fields
-  autogen-modules:     Proto.Common
-                       Proto.Common_Fields
-                       Proto.Login
-                       Proto.Login_Fields
+--   autogen-modules:     Proto.Common
+--                        Proto.Common_Fields
+--                        Proto.Login
+--                        Proto.Login_Fields
 
-  build-tool-depends:  proto-lens-protoc:proto-lens-protoc
+  -- build-tool-depends:  proto-lens-protoc:proto-lens-protoc
   build-depends:       aeson >= 1.4
                      , bcrypt ^>= 0.0.11
                      , bytestring ^>= 0.10
